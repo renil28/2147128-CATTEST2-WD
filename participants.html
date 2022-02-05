@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    table {
+        width: 50%;
+        margin-left: 50px;
+    }
+    th, td {
+        text-align: left;
+        padding-left: 8px;
+    }
+    th {
+        background-color: #796b6b;
+         color: white;
+    }
+
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    h2{
+        margin-left: 15px;
+    }
+    .button{
+    color: #2d18ec;
+    margin-left: 50px;
+    }
+    .header img {
+        width: 350px;
+        height: 120px;
+        margin-left: 570px;
+    }
+    .header{
+        background-color: rgb(170, 210, 219);
+        height: 150px;
+    }
+    .text-center{
+        background-color: black;
+
+    }
+    .text-center p{
+        color: rgb(253, 253, 253);
+        font-size: normal ;
+    }
+    section{
+        width: 500px;
+        height: 1700px;
+        margin: 150px auto;
+    }
+    label{
+        display: block;
+        padding:1px;
+        font-size: 15px;
+    }
+    input{
+        width: 100%;
+        padding: 10px;
+        border: 1px red;
+        margin-left: 20px;
+        border-radius: 3px;
+    }
+    section button{
+        display: inline;
+        padding: 5px 50px;
+        margin-left: 150px;
+        background-color: #5c5eeb;
+        color: rgb(255, 255, 255);
+    }
+    section button:hover {
+        background-color: #2d18ec; 
+        color: white;
+    }
+    section p{
+        margin-left: 10px;
+    }
+    section h2{
+        margin-left: 150px;
+    }
+    section div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+</style>
+
+
+<head>
+  <title>Christ Participants List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel = "icon" href = "logo.jpg" type = "image/x-icon">
+</head>
+<div class="header">
+    <br>
+    <img src="logo.jpg" alt="logo" />
+</div>
+<br>
+<div class ="button">
+    <button type="button" onclick="loadXMLDoc()">Show Participants</button>
+</div>
+<br>
+<br>
+<br>
+<table id="demo" border="2">
+    <tr><th>Name</th><th>University</th><tr>
+</table>
+<br>
+
+<script>
+
+function loadXMLDoc() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      xmlDoc = this.responseXML;
+      myFunction();
+    }
+  };
+  xmlhttp.open("GET", "technocovid.xml" , true);
+  xmlhttp.send();
+}
+
+function myFunction(xml,func) { 
+  var x, i, table;
+  //xmlDoc = xml.responseXML;
+  table = "<tr><th>Name</th><th>University</th></tr>";
+  x = xmlDoc.getElementsByTagName("COMPUTER-SCIENCE")
+  for (i = 0; i < x.length; i++) { 
+    table += "<tr><td>" + 
+    x[i].getElementsByTagName("STU-NAME")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("STU-UNIVERSITY")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+
+</script>

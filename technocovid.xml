@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHRIST>
+    <COMPUTER-SCIENCE>
+        <STU-NAME>Renil Justin</STU-NAME>
+        <STU-UNIVERSITY>Christ University</STU-UNIVERSITY>
+        <STU-PHONE>1234567890</STU-PHONE>
+        <STU-EMAIL>renil.justin@christuniversity.in</STU-EMAIL>
+    </COMPUTER-SCIENCE>
+     <COMPUTER-SCIENCE>
+        <STU-NAME>Mark James</STU-NAME>
+        <STU-UNIVERSITY>Christ University</STU-UNIVERSITY>
+        <STU-PHONE>9845681311</STU-PHONE>
+        <STU-EMAIL>mark.james@christuniversity.in</STU-EMAIL>
+    </COMPUTER-SCIENCE>
+     <COMPUTER-SCIENCE>
+        <STU-NAME>Lola Nana</STU-NAME>
+        <STU-UNIVERSITY>Christ University</STU-UNIVERSITY>
+        <STU-PHONE>1234567890</STU-PHONE>
+        <STU-EMAIL>LolaNana@christuniversity.in</STU-EMAIL>
+    </COMPUTER-SCIENCE>
+</CHRIST>

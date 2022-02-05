@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .header img {
+        width: 350px;
+        height: 120px;
+        margin-left: 570px;
+    }
+    .header{
+        background-color: rgb(170, 210, 219);
+        height: 150px;
+    }
+    .text-center{
+        background-color: black;
+
+    }
+    .text-center p{
+        color: rgb(253, 253, 253);
+        font-size: normal ;
+    }
+    section{
+        width: 500px;
+        height: 1700px;
+        margin: 150px auto;
+    }
+    label{
+        display: block;
+        padding:1px;
+        font-size: 15px;
+    }
+    input{
+        width: 100%;
+        padding: 10px;
+        border: 1px red;
+        margin-left: 20px;
+        border-radius: 3px;
+    }
+    section button{
+        display: inline;
+        padding: 5px 50px;
+        margin-left: 150px;
+        background-color: #5c5eeb;
+        color: rgb(255, 255, 255);
+    }
+    section button:hover {
+        background-color: #2d18ec; 
+        color: white;
+    }
+    section p{
+        margin-left: 10px;
+    }
+    section h2{
+        margin-left: 150px;
+    }
+    section div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    .comments h2{
+        display: block;
+        padding:1px;
+        font-size: 15px;
+        margin-left: 0px;
+        font-weight: bold;
+    }
+</style>
+
+
+<head>
+  <title>Christ Registration form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel = "icon" href = "logo.jpg" type = "image/x-icon">
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+<div class="header">
+        <br>
+        <img src="logo.jpg" alt="logo" />
+</div>
+<!-- Container (Login Section) -->
+<section>
+<h1 style="margin-left: 145px;">Gateways 2022</h1>
+<h2>Registration Form</h2>
+<br>
+<form name="myform" onsubmit="return validate()" action="participants.html" >
+    <div>
+        <label for="namestu">Student Name</label>
+        <input type="text" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)" id="namestu" placeholder="Full-name">
+        <p></p>
+    </div>
+    <div>
+        <label for="username">User Name</label>
+        <input type="text" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)" id="username" maxlength="10" placeholder="User-name">
+        <p></p>
+    </div>
+    <div>
+        <label for="phstu">Student Phone Number</label>
+        <input type="text" id="phone" name="phone" onkeypress="phoneno()" maxlength="10" placeholder="Phone-number">
+        <p></p>
+    </div>
+    <div>
+        <label for="branch">Branch</label>
+        <input type="text" id="branch" placeholder="branch-name">
+        <p></p>
+    </div>
+    <div>
+        <label for="uni">University Name</label>
+        <input type="text" id="uni" placeholder="university-name">
+        <p></p>
+    </div>
+    <div>
+        <label for="agestu">Student Age</label>
+        <input type="text" id="age" name="age" onkeypress="phoneno()" maxlength="2" placeholder="Age">
+        <p></p>
+    </div>
+    <div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder=" Christ Email-id">
+        <p></p>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Password">
+        <p></p>
+    </div>
+    <div>
+        <label for="uni">Address</label>
+        <input type="text" id="address" placeholder="Home-Address">
+        <p></p>
+    </div>
+    <div class ="submitform"> 
+     <button type="submit">Submit </button>
+    </div>
+</form>
+</section>
+<h5>Cookies List</h5>
+<p id="list"></p>
+<footer class="text-center">
+    <br>
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br>
+    <p>Christ University</p>
+    <p>Dharmaram College Post,Hosur Road,Bengaluru-560029,Karnataka,India</p>
+    <a href="https://christuniversity.in/" class="fa fa-facebook"></a>
+    <a href="https://christuniversity.in/" class="fa fa-twitter"></a>
+    <a href="https://christuniversity.in/" class="fa fa-google"></a>
+    <a href="https://christuniversity.in/" class="fa fa-linkedin"></a>
+    <a href="https://christuniversity.in/" class="fa fa-youtube"></a>
+    <a href="https://christuniversity.in/" class="fa fa-instagram"></a> 
+    <br>
+    <br>
+    <button type="button" onclick="listCookies()">Check all stored cookies</button>
+    <button type="button" onclick="removeCookies()">Remove all cookies</button>
+</footer>
+</body>
+</html>
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+<script>
+    var email=document.getElementById('email');
+    var password = document.getElementById('password');
+    var span=document.getElementsByTagName('p');
+
+    email.onkeydown=function()
+    {
+        const regex1 = /^\w+([\.-]?\w+)+@(christuniversity.in|christuniversity.com)$/;
+        const regex2 = /^\w+([\.-]?\w+)+@(christuniversity.in|christuniversity.com)$/;
+        if (regex1.test(email.value) || regex2.test(email.value)) 
+       {
+         span[6].innerText="Your Email is Valid";
+         span[6].style.color="lime";  
+       }
+       else{
+           span[6].innerText="Invalid Email Id";
+           span[6].style.color="red";  
+       }
+    }
+    
+    password.onkeydown = function()
+    {
+      const regexpasswd = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~`!@#$%^_+={}|:"<>,.?])[A-Za-z\d@$!%*?&]{8,}$/
+      if(regexpasswd.test(password.value))
+       {
+         span[7].innerText="Your Password is Valid";
+         span[7].style.color="lime";  
+       }
+       else{
+           span[7].innerText="Invalid Password. Make sure your password has at least 1 upper case, numeric, and special character.";
+           span[7].style.color="red";  
+       }
+    }
+
+
+    function validate()
+        {
+           
+           var passtest = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~`!@#$%^_+={}|:"<>,.?])[A-Za-z\d@$!%*?&]{8,}$/
+           var namestu = document.getElementById("namestu");
+           var username=document.getElementById("username");
+           var phno = document.getElementById("phone")
+           var branch=document.getElementById("branch");
+           var uni = document.getElementById("uni");
+           var address=document.getElementById("address");
+           var age = document.getElementById("age");
+           var password=document.getElementById("password");
+           var email=document.getElementById('email');
+           if(namestu.value.trim()=="")
+           {
+               alert("Please Fill your Name");
+               namestu.style.border="solid 3px red";
+               return false;
+           }
+           else if(username.value.trim()=="")
+           {
+               alert("Please Fill your User Name(Min 4 characters, max 10)");
+               username.style.border="solid 3px red";
+               return false;
+           }
+           else if(username.value.trim().length<4)
+           {
+               alert("Your User Name should be more than 4 characters User Name(Min 5 characters, max 10)");
+               username.style.border="solid 3px red";
+               return false;
+           }
+           else if(phno.value.trim()=="")
+           {
+               alert("Please Fill your Phone Number");
+               phno.style.border="solid 3px red";
+               return false;
+           }
+           else if(phno.value.trim().length<10)
+           {
+               alert("Phone Number must have 10 digits");
+               phno.style.border="solid 3px red";
+               return false;
+           }
+           else if(branch.value.trim()=="")
+           {
+               alert("Please Fill your Branch");
+               branch.style.border="solid 3px red";
+               return false;
+           }
+           else if(uni.value.trim()=="")
+           {
+               alert("Please Fill your University");
+               uni.style.border="solid 3px red";
+               return false;
+           }
+           else if(age.value.trim()=="")
+           {
+               alert("Please Fill your age");
+               age.style.border="solid 3px red";
+               return false;
+           }
+           else if(age.value.trim()<="16")
+           {
+               alert("Please enter age above 17!");
+               age.style.border="solid 3px red";
+               return false;
+           }
+           else if(password.value.trim()=="")
+           {
+               alert("Please fill the Password");
+               password.style.border="solid 3px red";
+               return false;
+           }
+           else if(password.value.trim().length<8)
+           {
+               alert("Password is too short. Make sure it is more than 8 characters");
+               password.style.border="solid 3px red";
+               return false;
+           }
+           else if (!passtest.test(password.value)) 
+           {
+            alert("Password must contain atleast 1 Upper Case, 1 Lower Case, 1 Digit, 1 Special Character and It should be minimum 8 characters!")
+            return false;
+           }
+           else if(email.value.trim()=="")
+           {
+               alert("Please Fill your Email");
+               email.style.border="solid 3px red";
+               return false;
+           }
+           else if(address.value.trim()=="")
+           {
+               alert("Please Fill your Address");
+               address.style.border="solid 3px red";
+               return false;
+           }
+           else
+           {
+             alert("Your details have been submitted successfully.");
+             addCookie();
+             addelements();
+             return true;
+           }
+        }
+        function phoneno(){          
+            $('#phone').keypress(function(e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+</script>
+
+<script type = "text/javascript">
+
+        var num=1;
+        function addCookie() {
+           cookievalue = escape(document.myform.username.value) + ";"
+           cookievalue2 = escape(document.myform.email.value) + ";"
+           document.cookie="Username=" + cookievalue;
+           document.cookie="Email=" + cookievalue2;
+           document.cookie="Registration attempts ="+num;
+           num++;
+        }
+        
+        function listCookies() {
+           var result = document.cookie;
+           document.getElementById("list").innerHTML=result;
+        }
+        function removeCookies() {
+           var res = document.cookie;
+           var multiple = res.split(";");
+           for(var i=0;i<multiple.length;i++) {
+              var key = multiple[i].split("=");
+              document.cookie=key[0]+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+           }
+        }
+
+        function addelements(){
+            var phno= document.getElementById("phone");
+            localStorage.setItem("phone", phno.value);
+            var inputEmail= document.getElementById("email");
+            localStorage.setItem("email", inputEmail.value);
+        }
+  </script>
